@@ -13,6 +13,7 @@ body {
   width: 100px;
   height: 100px;
   margin: 10px;
+  flex-grow:1;
 }
 
 .block--red {
@@ -33,11 +34,4 @@ body {
 
 .block--gray {
   background-color: gray;
-}
-
-.buttons {
-  display:flex;
-  justify-content:center;
-  background-color:red;
-  width:100%;
 }

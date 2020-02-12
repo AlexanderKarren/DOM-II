@@ -1,27 +1,26 @@
-const leftDirection = true;
-
 document.querySelectorAll(".block").forEach(function(block) {
-    let margin = 0;
-    // block.addEventListener("mousedown", function(event) {
-    //     const interval = setInterval(function() {
-    //         window.addEventListener("mouseup", function(event) {
-    //             clearInterval(interval);
-    //         })
-    //         if (margin > screen.width - 120) {
-    //             clearInterval(interval);
-    //         }
-    //         else {
-    //             if (leftDirection === true) {
-    //                 margin++;
-    //             }
-    //             else {
-    //                 margin--;
-    //             }
-    //             block.style.marginLeft = `${margin}px`;
-    //         }
-    //     }, 1)
-    // });
+    let marginL = 0;
+    let marginB = 0;
+    block.addEventListener("mousedown", function(event) {
+        const intervalMoveRight = setInterval(function() {
+            window.addEventListener("mouseup", function(event) {
+                clearInterval(intervalMoveRight);
+            })
+            if (marginL > screen.width - 120) {
+                clearInterval(intervalMoveRight);
+            }
+            else {
+                marginL++;
+                block.style.marginLeft = `${marginL}px`;
+            }
+        }, 1)
+    });
     block.addEventListener("dblclick", function(event) {
-        console.log("double clicked");
+        block.style.order = "1";
+        document.querySelectorAll(".block").forEach(function(innerBlock) {
+            if (innerBlock != block) {
+                innerBlock.style.order = 2;
+            }
+        })
     })
 });
