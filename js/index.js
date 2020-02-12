@@ -84,7 +84,27 @@ submitButton.addEventListener("click", function(event) {
 
 const mainHeading = document.querySelector("h1");
 
+let headingIsBlue = false;
 mainHeading.addEventListener("click", function(event) {
-    mainHeading.color = "blue";
-    console.log("asshole");
+    event.stopPropagation();
+    if (headingIsBlue === false) {
+        mainHeading.style.color = "blue";
+        headingIsBlue = true;
+    }
+    else {
+        mainHeading.style.color = "inherit";
+        headingIsBlue = false;
+    }
+});
+
+let headerIsRed = false;
+header.addEventListener("click", function(event) {
+    if (headerIsRed === false) {
+        header.style.backgroundColor = "indianred";
+        headerIsRed = true;
+    }
+    else {
+        header.style.backgroundColor = "inherit";
+        headerIsRed = false;
+    }
 });
