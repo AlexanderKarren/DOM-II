@@ -163,6 +163,66 @@ img {
   max-width: 100%;
   height: auto;
 }
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+form > * {
+  margin: 2px 0 2px 0;
+}
+form label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+form .radio-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 10px 0;
+}
+form .radio-container > * {
+  margin: 0 10px 0 10px;
+}
+form input,
+form textarea {
+  border: 2px dashed #C0C0C0;
+}
+form input[type="text"],
+form textarea[type="text"] {
+  width: 25%;
+}
+form input[type="submit"],
+form textarea[type="submit"] {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  border: 1px solid #C0C0C0;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+@media (max-width: 500px) {
+  form input[type="submit"],
+  form textarea[type="submit"] {
+    width: 100%;
+  }
+}
+form input[type="submit"]:hover,
+form textarea[type="submit"]:hover {
+  background: #FFFFFF;
+  color: #17A2B8;
+}
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border: 2px cornflowerblue dashed;
+}
 .container {
   max-width: 800px;
   width: 100%;
@@ -239,6 +299,9 @@ img {
 }
 .home .intro h2 {
   margin-top: 20px;
+}
+.home .intro p#warning {
+  color: red;
 }
 .home .content-section {
   margin: 30px 0;
