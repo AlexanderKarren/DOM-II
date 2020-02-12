@@ -80,6 +80,23 @@ submitButton.addEventListener("click", function(event) {
     }
 });
 
+// blur
+nameInput.addEventListener("blur", function(event) {
+    if (nameInput.value.length == 0) {
+        nameInput.style.backgroundColor = "salmon";
+        nameInput.style.border = "2px dashed red";
+    }
+    else {
+        nameInput.style.border = "2px dashed #C0C0C0"
+    }
+});
+
+// focus
+nameInput.addEventListener("focus", function(event) {
+    nameInput.style.backgroundColor = "inherit";
+    nameInput.style.border = "2px dashed cornflowerblue";
+})
+
 // stopPropagation()
 
 const mainHeading = document.querySelector("h1");
