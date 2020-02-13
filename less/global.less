@@ -39,6 +39,40 @@ img {
   height: auto;
 }
 
+form {
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  > * {
+    margin:2px 0 2px 0;
+  }
+  label {
+    font-family:'Roboto', sans-serif;
+    font-size:1.5rem;
+  }
+  .radio-container {
+    display:flex;
+    justify-content:center;
+    margin: 10px 0 10px 0;
+    > * {
+      margin: 0 10px 0 10px;
+    }
+  }
+  input, textarea {
+    border:@dashedBorder;
+    &[type="text"] {
+      width:25%;
+    }
+    &[type="submit"] {
+      .button-creator(100%, 45px, @button-bg, @white, 1.8rem);
+    }
+    &:focus {
+      outline:none;
+      border:2px cornflowerblue dashed;
+    }
+  }
+}
+
 .container {
   max-width: 800px;
   width: 100%;
